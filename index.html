@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WangLab - 中国农业大学</title>
+    <title>Home - WangLab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .wanglab-theme-color { color: #6b8e23; }
+        .hero-section {
+            /* 后续可以将 URL 里的占位图替换成涿州野外实习合影或大蚕蛾高清图 */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x600/343a40/ffffff?text=WangLab+Banner') no-repeat center center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section-heading { border-bottom: 2px solid #6b8e23; padding-bottom: 10px; margin-bottom: 30px; font-weight: bold; }
+        .news-item { border-bottom: 1px dashed #ccc; padding: 15px 0; }
+        .news-item:last-child { border-bottom: none; }
+        .news-date { color: #6b8e23; font-weight: bold; display: block; margin-bottom: 5px; }
+    </style>
 </head>
 <body>
-    <!-- 对标 weizhanglab 的导航栏 -->
+    <!-- 统一导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
@@ -26,12 +40,50 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <h1 class="display-4">Welcome to WangLab</h1>
-        <p class="lead">Principal Investigator: Dr. Wang Shuting</p>
-        <hr class="my-4">
-        <p>我们致力于大蚕蛾科基因组学、系统发育树构建以及农业植物病理等方向的交叉研究。</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+    <!-- 欢迎横幅 (Hero Section) -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Welcome to WangLab</h1>
+            <p class="lead mb-4">Evolutionary Genomics | Plant Pathology | Bioinformatics</p>
+            <a href="research.html" class="btn btn-outline-light btn-lg">Explore Our Research</a>
+        </div>
+    </div>
+
+    <!-- 核心内容区 -->
+    <div class="container my-5">
+        <div class="row g-5">
+            <!-- 左侧：实验室简介 -->
+            <div class="col-md-7">
+                <h3 class="section-heading text-uppercase">About Us</h3>
+                <p class="fs-5 mb-4">
+                    我们隶属于<strong>中国农业大学植物保护学院</strong>。
+                </p>
+                <p class="text-muted lh-lg">
+                    课题组主要研究昆虫多样性及适应性的形成及演化机制。目前，实验室重点关注枯叶蛱蝶属的表型发育分子机制、大蚕蛾科（Saturniidae）的基因组学与系统发育演化，并积极推进传统农业植物病理与智慧诊断（如小麦病害智能测报）的交叉学科应用。
+                </p>
+                <a href="people.html" class="text-decoration-none fw-bold" style="color: #6b8e23;">Meet Our Team ➔</a>
+            </div>
+
+            <!-- 右侧：新闻动态 -->
+            <div class="col-md-5">
+                <h3 class="section-heading text-uppercase">News & Events</h3>
+                <div class="news-list">
+                    <div class="news-item">
+                        <span class="news-date">2024</span>
+                        <p class="mb-0">热烈祝贺王姝婷博士荣获<strong>第六届青年生命科学论坛新秀报告一等奖</strong>！</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">2023</span>
+                        <p class="mb-0">王姝婷博士入选中国博士后科学基金“博士后创新人才支持计划”。</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-date">Recent</span>
+                        <p class="mb-0">实验室上线全新官方网站与“农声论坛”数字化农业交流平台。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
