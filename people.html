@@ -7,10 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .wanglab-theme-color { color: #6b8e23; }
-        .section-heading { border-bottom: 2px solid #6b8e23; padding-bottom: 10px; margin-bottom: 30px; margin-top: 40px; font-weight: bold; }
+        /* 小导航栏样式 */
+        .sub-nav-link { color: #555; font-weight: bold; margin-right: 20px; text-decoration: none; transition: color 0.2s; }
+        .sub-nav-link:hover { color: #6b8e23; }
+        
+        .section-heading { border-bottom: 2px solid #6b8e23; padding-bottom: 10px; margin-bottom: 30px; margin-top: 40px; font-weight: bold; scroll-margin-top: 80px; }
         .pi-img { width: 100%; max-width: 220px; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .member-card { border: none; transition: transform 0.2s; }
-        .member-card:hover { transform: translateY(-5px); }
+        .member-card { border: none; transition: transform 0.2s; position: relative; }
+        .member-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
         .member-img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; }
         .member-name { color: #6b8e23; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
         .member-info { font-size: 0.9rem; color: #555; margin-bottom: 0; }
@@ -18,7 +22,7 @@
 </head>
 <body>
     <!-- 统一导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -26,31 +30,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-uppercase">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
-        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
-        <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
-        <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        
-        <!-- 下面是新增的语言切换按钮 -->
-        <li class="nav-item ms-lg-3 d-flex align-items-center">
-            <a class="btn btn-sm btn-outline-light" style="border-color: #6b8e23; color: #6b8e23;" href="index_en.html">EN</a>
-        </li>
-    </ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="people.html">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 团队成员主体内容 -->
-    <div class="container mb-5">
+    <div class="container mb-5 mt-4">
         
+        <!-- 分类跳转小导航 -->
+        <div class="d-flex flex-wrap border-bottom pb-3 mb-4">
+            <a href="#pi" class="sub-nav-link">Principal Investigator</a>
+            <a href="#graduate" class="sub-nav-link">Graduate Students</a>
+            <a href="#undergraduate" class="sub-nav-link">Undergraduate Students</a>
+        </div>
+
         <!-- Principal Investigator -->
-        <!-- Principal Investigator -->
-        <h3 class="section-heading text-uppercase">Principal Investigator</h3>
+        <h3 id="pi" class="section-heading text-uppercase">Principal Investigator</h3>
         <div class="row align-items-start">
             <div class="col-md-3 mb-4">
-                <!-- PI 照片：你可以把这张官方证件照裁剪后替换到这里 -->
                 <img src="https://via.placeholder.com/220x280/e9ecef/6b8e23?text=Wang+Shuting" alt="Wang Shuting" class="pi-img">
             </div>
             <div class="col-md-9">
@@ -70,23 +73,9 @@
             </div>
         </div>
 
-        <!-- Graduate Students (预留) -->
-        <h3 class="section-heading text-uppercase">Graduate Students</h3>
+        <!-- Graduate Students -->
+        <h3 id="graduate" class="section-heading text-uppercase">Graduate Students</h3>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-            <!-- 预留卡片，后续招募研究生后复制此模块即可 -->
-            <div class="col">
-                <div class="card member-card">
-                    <img src="https://via.placeholder.com/250x250/f8f9fa/adb5bd?text=TBA" class="card-img-top member-img" alt="TBA">
-                    <div class="card-body p-0">
-                        <h5 class="member-name">待招募 (TBA)</h5>
-                        <p class="member-info">Ph.D. Student</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <h3 class="section-heading text-uppercase">Doctoral Students</h3>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
-            <!-- 预留卡片，后续招募研究生后复制此模块即可 -->
             <div class="col">
                 <div class="card member-card">
                     <img src="https://via.placeholder.com/250x250/f8f9fa/adb5bd?text=TBA" class="card-img-top member-img" alt="TBA">
@@ -99,17 +88,15 @@
         </div>
 
         <!-- Undergraduate Students -->
-        <h3 class="section-heading text-uppercase">Undergraduate Students</h3>
+        <h3 id="undergraduate" class="section-heading text-uppercase">Undergraduate Students</h3>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card member-card">
                     <img src="https://via.placeholder.com/250x250/e9ecef/6b8e23?text=Marry" class="card-img-top member-img" alt="Marry">
                     <div class="card-body p-0">
-                        <h5 class="member-name">Marry</h5>
+                        <!-- 注意这里：加入了 a 标签和 stretched-link 类，使整张卡片可点击跳转 -->
+                        <h5 class="member-name"><a href="marry.html" class="text-decoration-none stretched-link" style="color: inherit;">Marry</a></h5>
                         <p class="member-info">Undergraduate Student, Plant Protection</p>
-                        <p class="member-info mt-2" style="font-size: 0.85rem;">
-                            Focuses on Saturniidae phylogenetics (CO1 gene analysis via Linux/IQ-TREE), morphological observation, and the development of agricultural diagnostic platforms (wheat disease screening & Nongsheng Forum).
-                        </p>
                     </div>
                 </div>
             </div>

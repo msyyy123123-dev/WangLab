@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,6 @@
     <style>
         .wanglab-theme-color { color: #6b8e23; }
         .hero-section {
-            /* 后续可以将 URL 里的占位图替换成涿州野外实习合影或大蚕蛾高清图 */
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x600/343a40/ffffff?text=WangLab+Banner') no-repeat center center/cover;
             color: white;
             padding: 120px 0;
@@ -21,70 +20,69 @@
     </style>
 </head>
 <body>
-    <!-- 统一导航栏 -->
+    <!-- 英文版导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
+            <a class="navbar-brand fw-bold" href="index_en.html">Wang Lab</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-uppercase">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
-        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
-        <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
-        <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        
-        <!-- 下面是新增的语言切换按钮 -->
-        <li class="nav-item ms-lg-3 d-flex align-items-center">
-            <a class="btn btn-sm btn-outline-light" style="border-color: #6b8e23; color: #6b8e23;" href="index_en.html">中</a>
-        </li>
-    </ul>
+                    <li class="nav-item"><a class="nav-link active" href="index_en.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research_en.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications_en.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="people_en.html">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos_en.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact_en.html">Contact</a></li>
+                    <!-- 切回中文版的按钮 -->
+                    <li class="nav-item ms-lg-3 d-flex align-items-center">
+                        <a class="btn btn-sm btn-outline-light" style="border-color: #6b8e23; color: #6b8e23;" href="index.html">中</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 欢迎横幅 (Hero Section) -->
+    <!-- Hero Section -->
     <div class="hero-section">
         <div class="container">
             <h1 class="display-4 fw-bold mb-4">Welcome to WangLab</h1>
             <p class="lead mb-4">Evolutionary Genomics | Plant Pathology | Bioinformatics</p>
-            <a href="research.html" class="btn btn-outline-light btn-lg">Explore Our Research</a>
+            <a href="research_en.html" class="btn btn-outline-light btn-lg">Explore Our Research</a>
         </div>
     </div>
 
-    <!-- 核心内容区 -->
+    <!-- Main Content -->
     <div class="container my-5">
         <div class="row g-5">
-            <!-- 左侧：实验室简介 -->
+            <!-- About Us -->
             <div class="col-md-7">
                 <h3 class="section-heading text-uppercase">About Us</h3>
                 <p class="fs-5 mb-4">
-                    我们隶属于<strong>中国农业大学植物保护学院</strong>。
+                    We are affiliated with the <strong>College of Plant Protection, China Agricultural University</strong>.
                 </p>
                 <p class="text-muted lh-lg">
-                    课题组主要研究昆虫多样性及适应性的形成及演化机制。目前，实验室重点关注枯叶蛱蝶属的表型发育分子机制、大蚕蛾科（Saturniidae）的基因组学与系统发育演化，并积极推进传统农业植物病理与智慧诊断（如小麦病害智能测报）的交叉学科应用。
+                    Our research group primarily focuses on the formation and evolutionary mechanisms of insect diversity and adaptability. Currently, the laboratory investigates the molecular mechanisms of phenotypic development in <i>Kallima</i> butterflies, the evolutionary genomics and phylogenetics of Saturniidae, and actively promotes the interdisciplinary application of traditional agricultural plant pathology and intelligent diagnostics (e.g., intelligent screening of wheat diseases).
                 </p>
-                <a href="people.html" class="text-decoration-none fw-bold" style="color: #6b8e23;">Meet Our Team ➔</a>
+                <a href="people_en.html" class="text-decoration-none fw-bold wanglab-theme-color">Meet Our Team ➔</a>
             </div>
 
-            <!-- 右侧：新闻动态 -->
+            <!-- News & Events -->
             <div class="col-md-5">
                 <h3 class="section-heading text-uppercase">News & Events</h3>
                 <div class="news-list">
                     <div class="news-item">
                         <span class="news-date">2024</span>
-                        <p class="mb-0">热烈祝贺王姝婷博士荣获<strong>第六届青年生命科学论坛新秀报告一等奖</strong>！</p>
+                        <p class="mb-0">Congratulations to Dr. Shuting Wang for winning the <strong>First Prize for Best Presentation at the 6th Youth Life Science Forum</strong>!</p>
                     </div>
                     <div class="news-item">
                         <span class="news-date">2023</span>
-                        <p class="mb-0">王姝婷博士入选中国博士后科学基金“博士后创新人才支持计划”。</p>
+                        <p class="mb-0">Dr. Shuting Wang was selected for the "Postdoctoral Innovative Talent Support Program" by the China Postdoctoral Science Foundation.</p>
                     </div>
                     <div class="news-item">
                         <span class="news-date">Recent</span>
-                        <p class="mb-0">实验室上线全新官方网站与“农声论坛”数字化农业交流平台。</p>
+                        <p class="mb-0">The laboratory officially launched its new website and the "Nongsheng Forum" digital agricultural exchange platform.</p>
                     </div>
                 </div>
             </div>

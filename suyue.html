@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marry - WangLab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .wanglab-theme-color { color: #6b8e23; }
+        .section-heading { border-bottom: 2px solid #6b8e23; padding-bottom: 10px; margin-bottom: 25px; margin-top: 30px; font-weight: bold; }
+        .profile-photo { width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <!-- 统一导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="people.html">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 个人主页主体内容 -->
+    <div class="container my-5">
+        
+        <!-- 返回按钮 -->
+        <a href="people.html" class="text-decoration-none text-muted mb-4 d-inline-block">← Back to People</a>
+
+        <div class="row mt-3">
+            <!-- 左侧照片与基本信息 -->
+            <div class="col-md-4 mb-4">
+                <img src="https://via.placeholder.com/400x500/e9ecef/6b8e23?text=Marry" alt="Marry" class="profile-photo mb-4">
+                <h3 class="fw-bold wanglab-theme-color">Marry</h3>
+                <p class="text-muted fs-5">Undergraduate Student</p>
+                <hr>
+                <p><strong>专业：</strong>植物保护 (Plant Protection)</p>
+                <p><strong>年级：</strong>本科三年级</p>
+            </div>
+
+            <!-- 右侧详细履历 -->
+            <div class="col-md-8 pl-md-4">
+                
+                <h4 class="section-heading text-uppercase">Biography</h4>
+                <p class="lh-lg">
+                    Marry 现为中国农业大学植物保护专业本科三年级学生，对昆虫学、植物病理学与计算生物学的交叉领域具有浓厚兴趣。在 WangLab 期间，主要参与大蚕蛾科的系统发育分析、昆虫形态学观察以及农业智慧诊断平台的开发与维护工作。
+                </p>
+
+                <h4 class="section-heading text-uppercase">Research Experience</h4>
+                <ul>
+                    <li class="mb-3">
+                        <strong>蛾类基因组学与系统发育分析：</strong><br>
+                        在 Linux 服务器环境下独立配置生信分析环境，使用 Mafft、IQ-TREE 等工具对大蚕蛾 CO1 基因进行多序列比对及最大似然系统发育树构建，并通过 iTOL 进行可视化渲染。
+                    </li>
+                    <li class="mb-3">
+                        <strong>昆虫形态学与干湿实验基础：</strong><br>
+                        参与昆虫网捕采集、标本制作与室内饲养观察，重点关注华尾大蚕蛾、绿尾大蚕蛾等物种的口器退化特征。顺利完成涿州野外实习。
+                    </li>
+                    <li class="mb-3">
+                        <strong>农业病害智能诊断工具开发：</strong><br>
+                        主导开发小麦病害智能诊断网站，设计基于症状和农药选择的匹配逻辑；搭建并维护“农声论坛”及 WangLab 官方网站。
+                    </li>
+                </ul>
+
+                <h4 class="section-heading text-uppercase">Skills</h4>
+                <ul>
+                    <li><strong>Bioinformatics:</strong> Linux Shell, Mafft, IQ-TREE, iTOL</li>
+                    <li><strong>Web Development:</strong> HTML/CSS, Bootstrap, Web Server Deployment</li>
+                    <li><strong>Lab Skills:</strong> Insect Rearing, Specimen Preparation, Morphological Observation</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
