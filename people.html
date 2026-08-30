@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - WangLab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .wanglab-theme-color { color: #6b8e23; }
+        .section-heading { border-bottom: 2px solid #6b8e23; padding-bottom: 10px; margin-bottom: 30px; margin-top: 40px; font-weight: bold; }
+        .pi-img { width: 100%; max-width: 220px; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .member-card { border: none; transition: transform 0.2s; }
+        .member-card:hover { transform: translateY(-5px); }
+        .member-img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; }
+        .member-name { color: #6b8e23; font-weight: bold; margin-top: 15px; margin-bottom: 5px; }
+        .member-info { font-size: 0.9rem; color: #555; margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <!-- 统一导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="people.html">People</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 团队成员主体内容 -->
+    <div class="container mb-5">
+        
+        <!-- Principal Investigator -->
+        <h3 class="section-heading text-uppercase">Principal Investigator</h3>
+        <div class="row align-items-start">
+            <div class="col-md-3 mb-4">
+                <!-- PI 照片占位，请将 src 替换为真实图片路径，例如 images/wangst.jpg -->
+                <img src="https://via.placeholder.com/220x280/e9ecef/6b8e23?text=Photo" alt="Wang Shuting" class="pi-img">
+            </div>
+            <div class="col-md-9">
+                <h4 class="fw-bold mb-1">王姝婷 (Shuting Wang), Ph.D.</h4>
+                <p class="text-muted mb-3">Principal Investigator / Associate Professor (Title 待定)</p>
+                <p><strong>Email:</strong> wangst@cau.edu.cn (请替换为真实邮箱)</p>
+                <p><strong>Research Interests:</strong><br>
+                Evolution and developmental genetics of butterflies, evolutionary genomics and phylogenetics of moths, intersection of agricultural plant pathology and intelligent diagnostics.</p>
+                <p><strong>Biography:</strong><br>
+                王姝婷博士现任中国农业大学植物保护学院 PI。课题组主要研究昆虫多样性及适应性的形成及演化机制，主持中国博士后科学基金等多项项目。实验室重点关注枯叶蛱蝶属的表型发育分子机制、大蚕蛾科的基因组学演化，并积极推进智慧农业诊断工具的开发。</p>
+            </div>
+        </div>
+
+        <!-- Graduate Students (预留) -->
+        <h3 class="section-heading text-uppercase">Graduate Students</h3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            <!-- 预留卡片，后续招募研究生后复制此模块即可 -->
+            <div class="col">
+                <div class="card member-card">
+                    <img src="https://via.placeholder.com/250x250/f8f9fa/adb5bd?text=TBA" class="card-img-top member-img" alt="TBA">
+                    <div class="card-body p-0">
+                        <h5 class="member-name">待招募 (TBA)</h5>
+                        <p class="member-info">Ph.D. Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Undergraduate Students -->
+        <h3 class="section-heading text-uppercase">Undergraduate Students</h3>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card member-card">
+                    <img src="https://via.placeholder.com/250x250/e9ecef/6b8e23?text=Marry" class="card-img-top member-img" alt="Marry">
+                    <div class="card-body p-0">
+                        <h5 class="member-name">Marry</h5>
+                        <p class="member-info">Undergraduate Student, Plant Protection</p>
+                        <p class="member-info mt-2" style="font-size: 0.85rem;">
+                            Focuses on Saturniidae phylogenetics (CO1 gene analysis via Linux/IQ-TREE), morphological observation, and the development of agricultural diagnostic platforms (wheat disease screening & Nongsheng Forum).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
