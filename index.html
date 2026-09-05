@@ -3,94 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - WangLab</title>
+    <title>首页 - WangLab | 中国农业大学昆虫演化与智慧植保实验室</title>
+    <!-- Bootstrap 5 样式与图标库 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
-        .wanglab-theme-color { color: #6b8e23; }
-        .hero-section {
-            /* 后续可以将 URL 里的占位图替换成涿州野外实习合影或大蚕蛾高清图 */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1600x600/343a40/ffffff?text=WangLab+Banner') no-repeat center center/cover;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
+        :root {
+            --theme-color: #6b8e23;       /* 实验室主色：橄榄绿 */
+            --theme-dark: #55721a;        /* 深绿 */
+            --theme-light: #f4f7ee;       /* 浅底色 */
         }
-        .section-heading { border-bottom: 2px solid #6b8e23; padding-bottom: 10px; margin-bottom: 30px; font-weight: bold; }
-        .news-item { border-bottom: 1px dashed #ccc; padding: 15px 0; }
-        .news-item:last-child { border-bottom: none; }
-        .news-date { color: #6b8e23; font-weight: bold; display: block; margin-bottom: 5px; }
+        .text-theme { color: var(--theme-color) !important; }
+        .bg-theme { background-color: var(--theme-color) !important; }
+        .btn-theme {
+            background-color: var(--theme-color);
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-theme:hover {
+            background-color: var(--theme-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-outline-theme {
+            border: 2px solid var(--theme-color);
+            color: var(--theme-color);
+            font-weight: 600;
+        }
+        .btn-outline-theme:hover {
+            background-color: var(--theme-color);
+            color: #fff;
+        }
+
+        /* 顶部大横幅 (Hero Section) */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(26, 36, 22, 0.88), rgba(43, 58, 38, 0.82)), 
+                        url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+            color: white;
+            padding: 110px 0 90px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            color: #c9e295;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* 通用标题装饰 */
+        .section-title {
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+            color: #212529;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--theme-color);
+            border-radius: 2px;
+        }
+
+        /* 研究方向卡片 */
+        .research-card {
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: #fff;
+            height: 100%;
+        }
+        .research-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            border-color: #cfdeb6;
+        }
+        .research-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background-color: var(--theme-light);
+            color: var(--theme-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+        }
+
+        /* 新闻列表 */
+        .news-item {
+            padding: 14px 0;
+            border-bottom: 1px dashed #e2e2e2;
+            display: flex;
+            align-items: baseline;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-badge {
+            background-color: var(--theme-light);
+            color: var(--theme-dark);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-right: 14px;
+            flex-shrink: 0;
+            border: 1px solid #d5e5be;
+        }
+        .news-text {
+            color: #495057;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* 快速数据标签条 */
+        .stats-bar {
+            background-color: #fff;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 22px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .stat-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background-color: #212529;
+            color: #adb5bd;
+            padding: 45px 0 25px;
+            font-size: 0.9rem;
+        }
+        .site-footer a {
+            color: #ced4da;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .site-footer a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <!-- 统一导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- 1. 统一顶部导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <i class="bi bi-flower1 me-2 text-theme"></i> Wang Lab
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-uppercase">
-      <ul class="navbar-nav ms-auto text-uppercase">
-    <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
-    <li class="nav-item"><a class="nav-link" href="research.html">研究方向</a></li>
-    <li class="nav-item"><a class="nav-link" href="publications.html">学术成果</a></li>
-    <li class="nav-item"><a class="nav-link" href="people.html">团队成员</a></li>
-    <li class="nav-item"><a class="nav-link" href="photos.html">相册掠影</a></li>
-    <li class="nav-item"><a class="nav-link" href="contact.html">联系我们</a></li>
-</ul>
-        
-        <!-- 下面是新增的语言切换按钮 -->
-        <li class="nav-item ms-lg-3 d-flex align-items-center">
-            <a class="btn btn-sm btn-outline-light" style="border-color: #6b8e23; color: #6b8e23;" href="index_en.html">EN</a>
-        </li>
-    </ul>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">研究方向</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">学术成果</a></li>
+                    <li class="nav-item"><a class="nav-link" href="people.html">团队成员</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">相册掠影</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">联系我们</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 欢迎横幅 (Hero Section) -->
-    <div class="hero-section">
+    <!-- 2. 主视觉区 (Hero Section) -->
+    <section class="hero-banner">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Welcome to WangLab</h1>
-            <p class="lead mb-4">Evolutionary Genomics | Plant Pathology | Bioinformatics</p>
-            <a href="research.html" class="btn btn-outline-light btn-lg">Explore Our Research</a>
-        </div>
-    </div>
-
-    <!-- 核心内容区 -->
-    <div class="container my-5">
-        <div class="row g-5">
-            <!-- 左侧：实验室简介 -->
-            <div class="col-md-7">
-                <h3 class="section-heading text-uppercase">About Us</h3>
-                <p class="fs-5 mb-4">
-                    我们隶属于<strong>中国农业大学植物保护学院</strong>。
-                </p>
-                <p class="text-muted lh-lg">
-                    课题组主要研究昆虫多样性及适应性的形成及演化机制。目前，实验室重点关注枯叶蛱蝶属的表型发育分子机制、大蚕蛾科（Saturniidae）的基因组学与系统发育演化，并积极推进传统农业植物病理与智慧诊断（如小麦病害智能测报）的交叉学科应用。
-                </p>
-                <a href="people.html" class="text-decoration-none fw-bold" style="color: #6b8e23;">Meet Our Team ➔</a>
-            </div>
-
-            <!-- 右侧：新闻动态 -->
-            <div class="col-md-5">
-                <h3 class="section-heading text-uppercase">News & Events</h3>
-                <div class="news-list">
-                    <div class="news-item">
-                        <span class="news-date">2024</span>
-                        <p class="mb-0">热烈祝贺王姝婷博士荣获<strong>第六届青年生命科学论坛新秀报告一等奖</strong>！</p>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date">2023</span>
-                        <p class="mb-0">王姝婷博士入选中国博士后科学基金“博士后创新人才支持计划”。</p>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date">Recent</span>
-                        <p class="mb-0">实验室上线全新官方网站与“农声论坛”数字化农业交流平台。</p>
+            <div class="row align-items-center">
+                <div class="col-lg-9">
+                    <p class="hero-subtitle mb-2">中国农业大学 · 植物保护学院 昆虫学系</p>
+                    <h1 class="display-4 fw-bold mb-3">昆虫多样性与演化基因组学实验室</h1>
+                    <p class="lead mb-4 text-light" style="opacity: 0.9; max-width: 800px; line-height: 1.8;">
+                        立足国家重大农业生态需求，聚焦蝶蛾类昆虫表型演化机制与分子发育学，推动计算生物学与智慧农业病虫害诊断的前沿交叉融合。
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="research.html" class="btn btn-theme px-4 py-2 fw-bold">探索研究方向</a>
+                        <a href="contact.html" class="btn btn-outline-light px-4 py-2 fw-bold">加入我们 (招生/招聘)</a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- 3. 特色方向标签条 -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="row text-center g-3">
+                <div class="col-6 col-md-3">
+                    <p class="stat-label"><i class="bi bi-dna text-theme me-2"></i>演化基因组学</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-label"><i class="bi bi-bug text-theme me-2"></i>表型发育机制</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-label"><i class="bi bi-diagram-3 text-theme me-2"></i>分子系统发育</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-label"><i class="bi bi-cpu text-theme me-2"></i>智慧病害诊断</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- 4. 核心内容区：实验室概况 + 最新动态 -->
+    <section class="container my-5">
+        <div class="row g-5">
+            <!-- 左侧：关于实验室 -->
+            <div class="col-lg-7">
+                <h3 class="section-title">实验室概况</h3>
+                <p class="fs-5 text-dark mb-3" style="line-height: 1.7;">
+                    欢迎访问<strong>王姝婷教授课题组（WangLab）</strong>官方网站！
+                </p>
+                <p class="text-secondary lh-lg mb-3">
+                    实验室隶属于中国农业大学植物保护学院昆虫学系。课题组长期致力于阐释昆虫多样性演化以及环境适应性的深层次分子机制。以枯叶蛱蝶属（<i>Kallima</i>）为代表，解析蝴蝶伪装表型形成与山地生物多样性的演化模式；同时利用高通量测序与生物信息学手段，开展大蚕蛾科（Saturniidae）等重要类群的基因组学解析。
+                </p>
+                <p class="text-secondary lh-lg mb-4">
+                    此外，课题组紧密结合现代信息技术，积极推进传统植物病理学与现代算法的结合，主导开发针对农作物（如小麦主要病害）的智能测报与农情交流平台，为绿色生态农业提供科研与技术支撑。
+                </p>
+                <div>
+                    <a href="wangst.html" class="btn btn-outline-theme btn-sm px-3 py-2 me-2">了解课题组长 (PI 简介)</a>
+                    <a href="people.html" class="btn btn-link text-theme fw-bold text-decoration-none">查看团队成员名单 ➔</a>
+                </div>
+            </div>
+
+            <!-- 右侧：新闻与重要动态 -->
+            <div class="col-lg-5">
+                <div class="bg-light p-4 rounded-3 border h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="fw-bold mb-0">最新动态 (News)</h4>
+                        <a href="publications.html" class="text-muted small text-decoration-none">更多成果 ➔</a>
+                    </div>
+                    <div class="news-list mt-3">
+                        <div class="news-item">
+                            <span class="news-badge">2024</span>
+                            <p class="news-text">王姝婷博士荣获<strong>第六届青年生命科学论坛“新秀报告一等奖”</strong>。</p>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-badge">2023</span>
+                            <p class="news-text">王姝婷博士入选中国博士后科学基金会<strong>“博士后创新人才支持计划”</strong>（博新计划）。</p>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-badge">2022</span>
+                            <p class="news-text">枯叶蛱蝶演化历程与遗传机制成果发表于国际顶尖期刊 <strong><i>Cell</i></strong>（封面文章）。</p>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-badge">动态</span>
+                            <p class="news-text">WangLab 官方主页与农业智慧诊断平台全面升级上线，欢迎交流！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 核心研究支柱卡片 (Featured Pillars) -->
+    <section class="bg-light py-5 border-top border-bottom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold">核心研究支柱</h3>
+                <p class="text-muted">融合经典生态演化理论与现代基因组学、计算生物学技术</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- 支柱 1 -->
+                <div class="col-md-4">
+                    <div class="card research-card p-4">
+                        <div class="research-card-icon">
+                            <i class="bi bi-layers-half"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">蝶类表型演化与发育机制</h5>
+                        <p class="text-muted small lh-lg mb-0">
+                            以枯叶蛱蝶属等物种为研究对象，综合利用演化生物学、发育遗传学等手段，阐释翅形与叶形多态性伪装表型的演化历史与遗传发育基础。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 支柱 2 -->
+                <div class="col-md-4">
+                    <div class="card research-card p-4">
+                        <div class="research-card-icon">
+                            <i class="bi bi-diagram-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">大蚕蛾基因组学与分子演化</h5>
+                        <p class="text-muted small lh-lg mb-0">
+                            结合野外标本采集与分子测序，基于大蚕蛾科重要物种开展系统发育树重构、器官退化形态特征比对及谱系地理学分析。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 支柱 3 -->
+                <div class="col-md-4">
+                    <div class="card research-card p-4">
+                        <div class="research-card-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">智慧植保与数字化农业平台</h5>
+                        <p class="text-muted small lh-lg mb-0">
+                            将传统植物病理学与现代算法相结合，探索农作物常见病虫害（如小麦病害）的智能诊断筛选逻辑与数字化交流社区构建。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="research.html" class="btn btn-outline-theme btn-sm px-4 py-2">深入了解我们的研究项目 ➔</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 底部版权与校区信息 (Footer) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5 class="text-white fw-bold mb-3"><i class="bi bi-flower1 text-theme me-2"></i>Wang Lab</h5>
+                    <p class="small mb-1">中国农业大学 植物保护学院 昆虫学系</p>
+                    <p class="small mb-1">地址：北京市海淀区圆明园西路2号（西校区） 邮编：100193</p>
+                    <p class="small mb-0">联系邮箱：<a href="mailto:wstree@cau.edu.cn">wstree@cau.edu.cn</a></p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white fw-bold mb-3">快速导航</h6>
+                    <ul class="list-unstyled small lh-lg">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="research.html">研究方向</a></li>
+                        <li><a href="publications.html">学术成果</a></li>
+                        <li><a href="people.html">团队成员</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-white fw-bold mb-3">学术交流</h6>
+                    <ul class="list-unstyled small lh-lg">
+                        <li><a href="contact.html">招生与招聘</a></li>
+                        <li><a href="photos.html">相册掠影</a></li>
+                        <li><a href="https://www.cau.edu.cn" target="_blank">中国农业大学官网</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center small text-muted">
+                © 2026 WangLab · 昆虫多样性与演化基因组学实验室 · 保留所有权利
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
