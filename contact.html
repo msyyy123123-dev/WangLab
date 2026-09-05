@@ -3,25 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - WangLab</title>
-    <!-- 引入 Bootstrap 框架 -->
+    <title>联系我们 - WangLab</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
-        .wanglab-theme-color { color: #6b8e23; }
-        .section-heading { 
-            border-bottom: 2px solid #6b8e23; 
-            padding-bottom: 10px; 
-            margin-bottom: 30px; 
-            margin-top: 40px; 
-            font-weight: bold; 
+        :root {
+            --theme-color: #6b8e23;
+            --theme-hover: #55721a;
         }
-        .contact-info { font-size: 1.1rem; line-height: 1.8; }
-        .icon-text { color: #6b8e23; margin-right: 10px; }
+        .text-theme { color: var(--theme-color) !important; }
+        .bg-theme { background-color: var(--theme-color) !important; }
+        
+        .page-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            padding: 45px 0;
+            margin-bottom: 40px;
+        }
+        .contact-card {
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #fff;
+            height: 100%;
+        }
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background-color: rgba(107, 142, 35, 0.12);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--theme-color);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .recruitment-badge {
+            background-color: #f1f6ea;
+            color: var(--theme-color);
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
-    <!-- 统一导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Wang Lab</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -29,57 +67,113 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-uppercase">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
-        <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
-        <li class="nav-item"><a class="nav-link" href="people.html">People</a></li>
-        <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        
-        <!-- 下面是新增的语言切换按钮 -->
-        <li class="nav-item ms-lg-3 d-flex align-items-center">
-            <a class="btn btn-sm btn-outline-light" style="border-color: #6b8e23; color: #6b8e23;" href="index_en.html">EN</a>
-        </li>
-    </ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="research.html">研究方向</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">学术成果</a></li>
+                    <li class="nav-item"><a class="nav-link" href="people.html">团队成员</a></li>
+                    <li class="nav-item"><a class="nav-link" href="photos.html">相册掠影</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">联系我们</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
+    <!-- 顶部标题栏 -->
+    <div class="page-header">
+        <div class="container">
+            <h2 class="fw-bold mb-1">联系我们 (Contact Us)</h2>
+            <p class="text-muted mb-0">欢迎海内外优秀学者、同行以及有志于科研的同学与我们联系交流与合作</p>
+        </div>
+    </div>
+
     <!-- 主体内容 -->
     <div class="container mb-5">
-        <div class="row">
-            <!-- 联系方式 -->
-            <div class="col-md-6">
-                <h3 class="section-heading text-uppercase">Contact Us</h3>
-                <div class="contact-info">
-                    <p><strong><span class="icon-text"> Address:</span></strong><br>
-                    中国农业大学 植物保护学院<br>
-                    北京市海淀区圆明园西路2号 (邮编: 100193)</p>
+        <div class="row g-4">
+            
+            <!-- 左侧：基础联系与地址信息 -->
+            <div class="col-lg-5">
+                <div class="contact-card p-4">
+                    <h4 class="fw-bold mb-4 pb-2 border-bottom">课题组联络</h4>
                     
-                    <p><strong><span class="icon-text">✉️ Email:</span></strong><br>
-                    王姝婷 (PI): wstree@cau.edu.cn <br>
-                    <span class="text-muted" style="font-size:0.9rem;">(注：正式上线前请核实并替换为真实邮箱地址)</span></p>
-                </div>
-            </div>
+                    <!-- PI 邮箱 -->
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="icon-box">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">电子邮箱</h6>
+                            <p class="mb-0 text-muted">王姝婷 教授 (PI):</p>
+                            <a href="mailto:wstree@cau.edu.cn" class="text-theme fw-bold text-decoration-none">wstree@cau.edu.cn</a>
+                        </div>
+                    </div>
 
-            <!-- 加入我们 -->
-            <div class="col-md-6">
-                <h3 class="section-heading text-uppercase">Join WangLab</h3>
-                <div class="card border-0 shadow-sm bg-light">
-                    <div class="card-body p-4">
-                        <h5 class="card-title wanglab-theme-color fw-bold mb-3">招生与招募信息</h5>
-                        <p class="card-text text-muted">
-                            我们热忱欢迎对昆虫进化与发育遗传学以及生物信息学分析感兴趣的同学加入课题组！
-                        </p>
-                        <ul class="text-muted">
-                            <li class="mb-2"><strong>本科生 (Undergraduates):</strong> 欢迎加入体验科研，可参与昆虫饲养、标本观察、生信数据分析</li>
-                            <li class="mb-2"><strong>研究生 (Graduate Students):</strong> 欢迎报考硕士、博士研究生。</li>
-                            <li><strong>博士后 (Postdocs):</strong> 欢迎有相关背景的青年学者联系申请。</li>
-                        </ul>
-                        <p class="mt-3 mb-0 fw-bold">请将个人简历 (CV) 发送至王老师邮箱。</p>
+                    <!-- 地址 -->
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="icon-box">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">实验室地址</h6>
+                            <p class="text-secondary mb-1">中国农业大学（西校区）植物保护学院 昆虫学系</p>
+                            <p class="text-muted small mb-0">北京市海淀区圆明园西路2号，邮编：100193</p>
+                        </div>
+                    </div>
+
+                    <!-- 乘车指引 -->
+                    <div class="d-flex align-items-start">
+                        <div class="icon-box">
+                            <i class="bi bi-compass"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">交通与到访指引</h6>
+                            <p class="text-muted small mb-0">
+                                乘坐北京地铁 16 号线至<strong>农大南路站</strong>下车，从 A 出口出站步行即达学校西校区正门。到访前请提前邮件预约。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- 右侧：招生与招募信息 (Join WangLab) -->
+            <div class="col-lg-7">
+                <div class="contact-card p-4">
+                    <h4 class="fw-bold mb-4 pb-2 border-bottom">加入我们 (Join WangLab)</h4>
+                    <p class="text-secondary mb-4">
+                        实验室常年招收具有生物学、植物保护学、昆虫学、生物信息学或计算机交叉背景的同学加入团队。
+                    </p>
+
+                    <!-- 本科生 -->
+                    <div class="mb-4">
+                        <span class="recruitment-badge">本科生科研训练 (URP / 毕设)</span>
+                        <p class="text-muted small mb-0">
+                            欢迎学有余力、对大蚕蛾发育、昆虫形态饲养或智慧农业病害诊断开发感兴趣的低年级本科生进组，课题组提供独立课题指导与良好的科研平台。
+                        </p>
+                    </div>
+
+                    <!-- 研究生 -->
+                    <div class="mb-4">
+                        <span class="recruitment-badge">硕士 / 博士研究生招募</span>
+                        <p class="text-muted small mb-0">
+                            欢迎报考中国农业大学昆虫学系硕博研究生。课题组重点攻关蝶蛾类演化基因组学及适应性发育机制。具备一定生物信息学基础或干湿实验经验者优先考虑。
+                        </p>
+                    </div>
+
+                    <!-- 博士后 -->
+                    <div class="mb-4">
+                        <span class="recruitment-badge">博士后及科研助理 (Postdocs)</span>
+                        <p class="text-muted small mb-0">
+                            热忱欢迎青年博士申请“博新计划”或学校全职博士后岗位。待遇优厚，支持独立探索具有前沿性的交叉学科研究方向。
+                        </p>
+                    </div>
+
+                    <div class="p-3 bg-light rounded-3 mt-3 border">
+                        <small class="text-muted d-block">
+                             <strong>申请须知：</strong>有意者请将个人简历（包含学习经历、科研兴趣及成果列表）发送至王老师邮箱，邮件主题请注明：<code>[姓名 - 申请身份 - 申请意向]</code>。
+                        </small>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
